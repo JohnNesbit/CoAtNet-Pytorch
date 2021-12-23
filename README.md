@@ -8,10 +8,11 @@ The translation equivariant weight is produced within the code by taking advanta
 
 ![image](https://user-images.githubusercontent.com/49009243/147174385-94829ab8-38e7-4c22-8ab4-48d4971a7d1d.png)
 
-The equation pictured above for finding the index of the respective equivariant weight for an index of the K\*Q number being i-j, the entirety of the indexing for this problem can 
-be solved with a diagonally similar matrix of equivarant weight index. For example, if the equivarant weight was (1, 2, 3, 4, 5, 6, 7), the respective additive for K\*Q would be:
+With the equation pictured above for finding the index of the respective equivariant weight for an index of the K\*Q number being i-j, the entirety of the indexing for this 
+problem can be solved with a diagonally similar matrix of equivarant weight index. For example, if the equivarant weight was (1, 2, 3, 4, 5, 6, 7), the respective additive for 
+K\*Q would be:
 
 ![image](https://user-images.githubusercontent.com/49009243/147174530-8c5a4a89-3341-494b-9884-12c5ed6cc1dd.png)
 
-Proving this simplification is, in fact, identical would be a bit labourious for a github readme, so I will leave you to your own mathematical devices to trust myself or to prove
+Proving this simplification is, in fact, identical would be a bit laborious for a github readme, so I will leave you to your own mathematical devices to trust myself or to prove
 this is not the case yourselves.
