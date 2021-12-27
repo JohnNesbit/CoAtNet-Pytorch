@@ -117,10 +117,12 @@ class RelAttention(nn.Module):
 				   self.v(x).reshape(x.shape[0], self.heads, 32)]
 
 		# because vector/matrix multiplication preserves order, a row of q*t is equal to a row of j, and the i coordinate is the column number; therefore, a matrix of diagonal weight values actually accomplishes the otherwise hard operation simply
+		TW_size = 63
+		i_s = 32
 		indexed_weight = sum(
-			[torch.diag(torch.full([32], float(self.TranslationalWeight[n])), n - 32)[:32, :32] for n in
-			 range(32)]) + sum([torch.diag(torch.full([32], float(self.TranslationalWeight[n])), n)[:32, :32] for n in
-								range(32)])  # make translational weight
+				[torch.diag(torch.full([i_s], float(self.TranslationalWeight[TW_size - 1 - n])), n - i_s)[:i_s, :i_s] for n in
+				range(i_s)]) + sum([torch.diag(torch.full([i_s], float(self.TranslationalWeight[i_s - 1 - n])), n)[:i_s, :i_s] for n in
+				range(i_s)])
 
 		# make softmax weight, divide by sqrt(d of k) on q*k only because it is ambigous in paper and that seems right.
 		a = nn.functional.softmax((torch.matmul(q, k) / torch.sqrt(torch.tensor(32))) + indexed_weight.to(q.device))
