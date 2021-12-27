@@ -1,9 +1,7 @@
 # CoAtNet-Pytorch
 Pytorch Implementation of CoAtNet. the SOTA image classification model described in https://arxiv.org/abs/2106.04803.
 
-This implementation allows for the easy swapping of CoatNet versions and has clear, abundant comments. As well as having a complete version of coatnet here, this repository also
-includes testing of that version on CIFAR-100. The testing uses the data augmentations perscribed by the coatnet paper of label smoothing, data mixup and RandAugment.
-
+This implementation allows for the easy swapping of CoatNet versions and has clear, abundant comments. 
 The translation equivariant weight is produced within the code by taking advantage of matrix multiplication's inherent order preserving nature. 
 
 ![image](https://user-images.githubusercontent.com/49009243/147174385-94829ab8-38e7-4c22-8ab4-48d4971a7d1d.png)
