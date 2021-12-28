@@ -1,7 +1,9 @@
 # CoAtNet-Pytorch
 Pytorch Implementation of CoAtNet. the SOTA image classification model described in https://arxiv.org/abs/2106.04803.
 
-This implementation allows for the easy swapping of CoatNet versions and has clear, abundant comments. 
+CoatNet.py contains the coatnet class and accompanying initialization functions for each size of coatnet. 
+
+## translation equivariant weight
 The translation equivariant weight is produced within the code by taking advantage of matrix multiplication's inherent order preserving nature. 
 
 ![image](https://user-images.githubusercontent.com/49009243/147174385-94829ab8-38e7-4c22-8ab4-48d4971a7d1d.png)
