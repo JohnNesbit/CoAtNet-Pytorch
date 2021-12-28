@@ -219,3 +219,19 @@ class CoAtNet(nn.Module):
 		# reduce dimensionality
 		x = self.pool(x).reshape(x.shape[0], x.shape[1])
 		return self.fc(x)
+
+# these initialization functions are adapted from code from github.com/chinhsuanwu's work
+def coatnet_2(in_channels, image_size):
+    num_blocks = [2, 2, 6, 14, 2]           
+    channels = [128, 128, 256, 512, 1024]   
+    return CoAtNet(in_channels, image_size, num_blocks, channels, num_classes=100)
+
+def coatnet_1(in_channels, image_size):
+    num_blocks = [2, 2, 6, 14, 2]           
+    channels = [64, 96, 192, 384, 768]  
+    return CoAtNet(in_channels, image_size, num_blocks, channels, num_classes=100)
+
+def coatnet_0(in_channels, image_size):
+    num_blocks = [2, 2, 3, 5, 2]           
+    channels = [64, 96, 192, 384, 768]  
+    return CoAtNet(in_channels, image_size, num_blocks, channels, num_classes=100)
