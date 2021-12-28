@@ -100,7 +100,7 @@ class RelAttention(nn.Module):
 				nn.Sequential(nn.Linear(kp * image_size * image_size, kp * image_size * image_size), nn.GELU()) for i in
 				range(3)]
 		self.heads = (kp * image_size * image_size) // 32
-		self.TranslationalWeight = nn.Parameter(torch.rand(63), requires_grad=True)  # weight should be dim/2 - 1 size
+		self.TranslationalWeight = nn.Parameter(torch.rand(self.heads, 63), requires_grad=True)  # weight should be dim/2 - 1 size
 		
 		# because vector/matrix multiplication preserves order, a row of q*t is equal to a row of j, and the i coordinate is the column number; therefore, a matrix of diagonal weight values actually accomplishes the otherwise hard operation simply
 		# this peice of code creates a diagonal index for quick indexing
@@ -127,7 +127,7 @@ class RelAttention(nn.Module):
 				   self.v(x).reshape(x.shape[0], self.heads, 32)]
 
 
-		indexed_weight = self.TranslationalWeight[self.index]
+		indexed_weight = self.TranslationalWeight[:, self.index]
 
 		# make softmax weight, divide by sqrt(d of k) on q*k only because it is ambigous in paper and that seems right.
 		a = nn.functional.softmax((torch.matmul(q, k) / torch.sqrt(torch.tensor(32))) + indexed_weight)
