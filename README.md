@@ -18,7 +18,3 @@ K\*Q would be:
 This result may seem odd, but really is not when one looks at the respective index for itself:
 
 ![image](https://user-images.githubusercontent.com/49009243/147421604-1f16a950-13a5-4302-8d45-0a93d6fe29c1.png)
-
-
-Proving this simplification is, in fact, identical would be a bit laborious for a github readme, so I will leave you to your own mathematical devices to trust myself or to prove
-this is not the case yourselves.
