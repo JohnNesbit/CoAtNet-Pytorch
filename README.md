@@ -1,5 +1,5 @@
 # CoAtNet-Pytorch
-Pytorch Implementation of CoAtNet. the SOTA image classification model described in https://arxiv.org/abs/2106.04803.
+Pytorch Implementation of CoAtNet, the SOTA image classification model described in https://arxiv.org/abs/2106.04803.
 
 CoatNet.py contains the coatnet class and accompanying initialization functions for each size of coatnet. 
 
